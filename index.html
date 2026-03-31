@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Bronx Home Buyer Seminar | April 25th</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #E63946;
+            --dark-red: #C1121F;
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #2D2D2D;
+            --light-gray: #F8F8F8;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(230, 57, 70, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 20% 80%, rgba(230, 57, 70, 0.06) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: var(--black);
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero-title span {
+            color: var(--red);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #B0B0B0;
+            margin-bottom: 32px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 18px 48px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Event Details Section */
+        .event-details {
+            padding: 50px 24px;
+            background: transparent;
+        }
+
+        .event-card {
+            background: rgba(45, 45, 45, 0.7);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red), var(--dark-red));
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .event-title {
+            font-size: clamp(1.5rem, 3vw, 1.75rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .event-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(230, 57, 70, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .event-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--red);
+        }
+
+        .event-info-content h4 {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .event-info-content p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* What You'll Learn Section */
+        .learn-section {
+            padding: 50px 24px;
+            background: transparent;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 36px;
+        }
+
+        .section-title span {
+            color: var(--red);
+        }
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .learn-card {
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .learn-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+
+        .learn-card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--red), var(--dark-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .learn-card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+        }
+
+        .learn-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .learn-card p {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        /* Speakers Section */
+        .speakers-section {
+            padding: 50px 24px;
+            background: transparent;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            background: rgba(45, 45, 45, 0.7);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+
+        .speaker-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .speaker-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .speaker-card .role {
+            color: var(--red);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .speaker-card p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 60px 24px;
+            background: transparent;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            color: #999;
+            font-size: 1rem;
+            margin-bottom: 28px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 36px 24px;
+            background: transparent;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            background: var(--dark-gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        .footer-email {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .footer-email a {
+            color: var(--red);
+            text-decoration: none;
+        }
+
+        .footer-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .event-card {
+                padding: 32px 24px;
+            }
+
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speakers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">Free Bronx Home Buyer Seminar</p>
+            <h1 class="hero-title">You May Be Closer to <span>Owning a Home</span> Than You Think</h1>
+            <p class="hero-subtitle">Join us to learn about low down payment options, NYC first-time buyer programs, and get your questions answered by local experts.</p>
+            <a href="https://tally.so/r/yPx1pd" class="cta-button">Reserve My Free Seat</a>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details">
+        <div class="event-card animate-on-scroll">
+            <span class="urgency-badge">Only 75 Seats Available</span>
+            <h2 class="event-title">Event Details</h2>
+            <div class="event-info">
+                <div class="event-info-item">
+                    <div class="event-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                        </svg>
+                    </div>
+                    <div class="event-info-content">
+                        <h4>Date</h4>
+                        <p>Friday, April 25th, 2025</p>
+                    </div>
+                </div>
+                <div class="event-info-item">
+                    <div class="event-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="event-info-content">
+                        <h4>Time</h4>
+                        <p>11:00 AM – 1:00 PM</p>
+                    </div>
+                </div>
+                <div class="event-info-item">
+                    <div class="event-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                    </div>
+                    <div class="event-info-content">
+                        <h4>Location</h4>
+                        <p>Locust Point Civic Association<br>3300 Tierney Place, Bronx NY 10465</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn Section -->
+    <section class="learn-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">What You'll <span>Learn</span></h2>
+            <div class="learn-grid">
+                <div class="learn-card animate-on-scroll">
+                    <div class="learn-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Low Down Payment Options</h3>
+                    <p>Discover how you can purchase a home with as little as 3.5% down payment.</p>
+                </div>
+                <div class="learn-card animate-on-scroll">
+                    <div class="learn-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3>NYC First-Time Buyer Grants</h3>
+                    <p>Learn about grants and programs specifically available for NYC first-time home buyers.</p>
+                </div>
+                <div class="learn-card animate-on-scroll">
+                    <div class="learn-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                        </svg>
+                    </div>
+                    <h3>Credit Improvement Tips</h3>
+                    <p>Practical strategies to boost your credit score before applying for a mortgage.</p>
+                </div>
+                <div class="learn-card animate-on-scroll">
+                    <div class="learn-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                        </svg>
+                    </div>
+                    <h3>Step-by-Step Process</h3>
+                    <p>Understand the entire journey from pre-approval to getting the keys to your new home.</p>
+                </div>
+                <div class="learn-card animate-on-scroll">
+                    <div class="learn-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                    </div>
+                    <h3>Navigate Today's Market</h3>
+                    <p>Get insider tips on how to confidently navigate the current Bronx real estate market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Meet Your <span>Experts</span></h2>
+            <div class="speakers-grid">
+                <div class="speaker-card animate-on-scroll">
+                    <div class="speaker-avatar">VF</div>
+                    <h3>Vincent Ferrante</h3>
+                    <p class="role">Real Estate Agent</p>
+                    <p>20+ years of Bronx real estate experience</p>
+                </div>
+                <div class="speaker-card animate-on-scroll">
+                    <div class="speaker-avatar">PG</div>
+                    <h3>Pat Gallo</h3>
+                    <p class="role">Real Estate Agent</p>
+                    <p>20+ years of Bronx real estate experience</p>
+                </div>
+                <div class="speaker-card animate-on-scroll">
+                    <div class="speaker-avatar">VC</div>
+                    <h3>Val Casali</h3>
+                    <p class="role">Real Estate Attorney</p>
+                    <p>Legal guidance through your purchase</p>
+                </div>
+                <div class="speaker-card animate-on-scroll">
+                    <div class="speaker-avatar">JK</div>
+                    <h3>John Kelly</h3>
+                    <p class="role">Loan Officer</p>
+                    <p>CrossCountry Mortgage specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2 class="animate-on-scroll">Ready to Take the First Step?</h2>
+            <p class="animate-on-scroll">Seats are limited. Reserve yours today and start your journey to homeownership.</p>
+            <a href="https://tally.so/r/yPx1pd" class="cta-button animate-on-scroll">Reserve My Free Seat</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-email">Questions? Email us at <a href="mailto:info@ferranterealty.com">info@ferranterealty.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

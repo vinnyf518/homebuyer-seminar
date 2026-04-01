@@ -54,7 +54,7 @@
             justify-content: center;
             text-align: center;
             padding: 80px 24px 60px;
-            background: var(--black);
+            background: transparent;
             position: relative;
         }
 
@@ -133,6 +133,13 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15);
         }
 
         .event-card::before {
@@ -236,13 +243,14 @@
             border-radius: 12px;
             padding: 24px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             backdrop-filter: blur(10px);
         }
 
         .learn-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(230, 57, 70, 0.3);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.1);
         }
 
         .learn-card-icon {
@@ -305,13 +313,14 @@
             padding: 24px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             backdrop-filter: blur(10px);
         }
 
         .speaker-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(230, 57, 70, 0.3);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.1);
         }
 
         .speaker-avatar {
@@ -371,6 +380,13 @@
             padding: 24px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.1);
         }
 
         .testimonial-header {

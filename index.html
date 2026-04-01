@@ -345,6 +345,71 @@
             font-size: 0.9rem;
         }
 
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 50px 24px;
+            background: transparent;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-stars {
+            color: #FBBF24;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-text {
+            color: #B0B0B0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         /* Final CTA Section */
         .final-cta {
             padding: 60px 24px;
@@ -606,6 +671,47 @@
                     <h3>Mark Aakjar</h3>
                     <p class="role">Licensed Inspector</p>
                     <p>Helping you catch issues before they get costly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">What Our <span>Buyers</span> Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">BC</div>
+                        <span class="testimonial-name">Brittany Collado</span>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Edie and Vincent are truly such amazing people to work with! They go above and beyond to treat you like family and made the whole process of buying a home a breeze for us as first time home buyers!"</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">GG</div>
+                        <span class="testimonial-name">Gina Giannone</span>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"As first time home buyer working with Vincent and Edie was a pleasure. They are beyond professional and walked me through this whole process. They made this whole experience seamless!"</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JC</div>
+                        <span class="testimonial-name">Jennifer Cruz</span>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Thanks to Vincent and his team, I was able to get a house as a single mom, which I never thought I could. They helped me every step of the way and advocated when needed."</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">DG</div>
+                        <span class="testimonial-name">Danielle & Robby Gray</span>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The Ferrante Realty Team was absolutely amazing. Helped us every step of the way buying our first home. I can't thank them enough for making the process so easy."</p>
                 </div>
             </div>
         </div>

@@ -533,12 +533,119 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .event-details,
+            .learn-section,
+            .speakers-section,
+            .testimonials-section,
+            .final-cta {
+                padding: 40px 20px;
+            }
+
             .event-card {
-                padding: 32px 24px;
+                padding: 24px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 24px;
             }
 
             .learn-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .learn-card {
+                padding: 20px;
+            }
+
+            .learn-card-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 16px;
+            }
+
+            .learn-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .speaker-card {
+                padding: 16px;
+            }
+
+            .speaker-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+            }
+
+            .speaker-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .speaker-card .role {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+            }
+
+            .speaker-card p {
+                font-size: 0.8rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-info-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .event-icon {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>

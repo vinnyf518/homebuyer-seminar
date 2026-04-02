@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Free Bronx Home Buyer Seminar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #E63946;
+            --dark-red: #C1121F;
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #2D2D2D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(230, 57, 70, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 90% 30%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 10% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20.5V18H18v2.5h-2.5V22H18v2.5h2V22h2.5v-1.5H20zM0 20.5V18h2v2.5h2.5V22H2v2.5H0V22h-2.5v-1.5H0zM20 0.5V-2h-2V.5h-2.5V2H18v2.5h2V2h2.5V.5H20zM0 0.5V-2h2V.5h2.5V2H2v2.5H0V2h-2.5V.5H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .form-card {
+            background: rgba(45, 45, 45, 0.7);
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-badge {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        .event-details {
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .event-details p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .event-details strong {
+            color: var(--white);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .form-label .required {
+            color: var(--red);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--red);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: #666;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Success State */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--white);
+        }
+
+        .success-message h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            color: #999;
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .success-details {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .success-details p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .success-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-content.hide {
+            display: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to event details
+        </a>
+
+        <div class="form-card">
+            <div class="form-content">
+                <div class="form-header">
+                    <span class="form-badge">Only 75 Seats</span>
+                    <h1 class="form-title">Reserve Your Seat</h1>
+                    <p class="form-subtitle">Free Bronx Home Buyer Seminar</p>
+                </div>
+
+                <div class="event-details">
+                    <p><strong>April 25th, 2025</strong> | 11:00 AM – 1:00 PM</p>
+                    <p>Locust Point Civic Association, Bronx NY</p>
+                </div>
+
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" name="full_name" class="form-input" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">What's your #1 question for our experts?</label>
+                        <textarea name="question" class="form-input" placeholder="Optional - we'll try to address it at the seminar"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">How did you hear about this event?</label>
+                        <input type="text" name="source" class="form-input" placeholder="Instagram, friend, etc.">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Reserve My Seat</button>
+                </form>
+            </div>
+
+            <div class="success-message">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2>You're Registered!</h2>
+                <p>Check your email for confirmation details.</p>
+                <div class="success-details">
+                    <p><strong>Date:</strong> Friday, April 25th, 2025</p>
+                    <p><strong>Time:</strong> 11:00 AM – 1:00 PM</p>
+                    <p><strong>Location:</strong> Locust Point Civic Association, 3300 Tierney Place, Bronx NY 10465</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const formContent = document.querySelector('.form-content');
+        const successMessage = document.querySelector('.success-message');
+        const submitBtn = document.querySelector('.submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(form);
+            const data = {
+                full_name: formData.get('full_name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                question: formData.get('question') || '',
+                source: formData.get('source') || ''
+            };
+
+            try {
+                await fetch('https://services.leadconnectorhq.com/hooks/znwlLav0AMMZOANyIXR1/webhook-trigger/78195060-9f16-4f24-9e26-d94fc6639384', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    mode: 'no-cors',
+                    body: JSON.stringify(data)
+                });
+
+                // Show success message
+                formContent.classList.add('hide');
+                successMessage.classList.add('show');
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Reserve My Seat';
+            }
+        });
+    </script>
+</body>
+</html>

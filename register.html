@@ -365,13 +365,29 @@
             urlEncodedData.append('source', formData.get('source') || '');
 
             try {
-                // Create hidden iframe for form submission
+                const data = {
+                    full_name: formData.get('full_name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    question: formData.get('question') || '',
+                    source: formData.get('source') || ''
+                };
+
+                // Send to Google Sheets
+                fetch('https://script.google.com/macros/s/AKfycbyoHwdepKghbU2thp-KnF9tzxVEOzKJEI8Ut4httzENlzY9iywXbffFVj-blvMjdVvwWg/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // Create hidden iframe for GHL submission
                 const iframe = document.createElement('iframe');
                 iframe.name = 'hidden-iframe';
                 iframe.style.display = 'none';
                 document.body.appendChild(iframe);
 
-                // Create a temporary form that submits to the webhook
+                // Create a temporary form that submits to GHL webhook
                 const tempForm = document.createElement('form');
                 tempForm.method = 'POST';
                 tempForm.action = 'https://services.leadconnectorhq.com/hooks/znwlLav0AMMZOANyIXR1/webhook-trigger/78195060-9f16-4f24-9e26-d94fc6639384';
